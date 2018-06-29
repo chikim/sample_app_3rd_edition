@@ -20,6 +20,8 @@ gem 'sdoc',                    '0.4.0', group: :doc
 gem 'figaro'
 gem 'pkg-config'
 gem 'nokogiri', '~> 1.8.2'
+gem 'unicorn-worker-killer'
+gem 'aws-sdk', '~> 2'
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -38,4 +40,15 @@ end
 
 group :production do
   gem 'rails_12factor', '0.0.2'
+end
+
+group :staging, :production do
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm'
+  gem 'capistrano-sidekiq'
+  gem 'capistrano3-unicorn'
+  gem 'capistrano-faster-assets'
+  gem 'unicorn'
 end
