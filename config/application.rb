@@ -22,5 +22,14 @@ module SampleApp
 
     # Include the authenticity token in remote forms.
     config.action_view.embed_authenticity_token_in_remote_forms = true
+    config.time_zone = 'Asia/Tokyo'
+    config.active_record.default_timezone = :local
+    config.active_record.time_zone_aware_attributes = false
+    config.autoload_paths << Rails.root.join("lib")
+    config.eager_load_paths << Rails.root.join("lib")
+
+    Dir.glob("config/routes/*").each do |route|
+      config.paths["config/routes.rb"] << Rails.root.join(route)
+    end
   end
 end

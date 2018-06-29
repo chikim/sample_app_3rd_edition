@@ -15,7 +15,6 @@ Rails.application.configure do
 
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :test
-  host = 'rails-tutorial-c9-mhartl.c9.io'
   config.action_mailer.default_url_options = { host: host, protocol: 'https' }
 
   # Print deprecation notices to the Rails logger.
